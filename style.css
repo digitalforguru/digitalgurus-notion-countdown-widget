@@ -142,27 +142,36 @@ body {
 }
 
 /* ---------------- INPUTS ---------------- */
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 180px;
-}
+/* ✨ aesthetic date inputs */
+.input-group input[type="date"],
+.input-group input[type="text"] {
+  padding: 8px;
+  border-radius: 12px;
 
-.input-group label {
-  font-size: 10px;
-  opacity: 0.6;
-}
-
-.input-group input {
-  padding: 6px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.85);
 
   font-size: 12px;
   text-align: center;
 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+  transition: all 0.2s ease;
+}
+
+/* focus glow */
+.input-group input:focus {
   outline: none;
+  border-color: #f9d5d3;
+
+  box-shadow:
+    0 0 0 3px rgba(249, 213, 211, 0.3),
+    0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* hover */
+.input-group input:hover {
+  transform: scale(1.02);
 }
 
 /* ---------------- ICON GRID ---------------- */
