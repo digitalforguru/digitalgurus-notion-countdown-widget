@@ -159,6 +159,23 @@ body {
   transition: all 0.2s ease;
 }
 
+/* ✏️ tiny soft labels */
+.input-group label {
+  font-size: 9px;
+  opacity: 0.55;
+
+  letter-spacing: 0.4px;
+  text-transform: lowercase;
+
+  margin-bottom: 2px;
+
+  transition: opacity 0.2s ease;
+}
+
+/* glow slightly when input is active */
+.input-group:focus-within label {
+  opacity: 0.85;
+}
 /* focus glow */
 .input-group input:focus {
   outline: none;
