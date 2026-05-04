@@ -1,226 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notion Embed Countdown Widget</title>
-<!-- Mogula font -->
-<link href="https://fonts.cdnfonts.com/css/mogula" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background: transparent;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DigitalGuru's Countdown Widget</title>
 
-  .widget {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px 15px;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-    transition: background 0.3s ease;
-    backdrop-filter: blur(5px);
-    position: relative;
-  }
-
-  .widget h2 {
-    font-family: 'Mogula', sans-serif;
-    font-size: 26px;
-    margin: 0 0 10px 0;
-    color: #000;
-  }
-
-  .widget p {
-    font-family: 'Mogula', sans-serif;
-    font-size: 20px;
-    margin: 0;
-    color: #000;
-  }
-
-  .themes {
-    display: flex;
-    justify-content: center;
-    margin-top: 12px;
-  }
-
-  .theme-circle {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    border: 2px solid #fff;
-    transition: transform 0.2s;
-  }
-
-  .theme-circle:hover {
-    transform: scale(1.2);
-  }
-
-  /* Edit button */
-  .edit-btn {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    cursor: pointer;
-    font-size: 18px;
-    color: #555;
-    transition: color 0.2s;
-  }
-
-  .edit-btn:hover {
-    color: #d65a88;
-  }
-
-  /* Inline edit form */
-  .edit-form {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 12px;
-  }
-
-  .edit-form input {
-    padding: 6px 10px;
-    margin: 5px 0;
-    width: 80%;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
-
-  .edit-form button {
-    margin-top: 5px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
-    background: #d65a88;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .edit-form button:hover {
-    background: #b04870;
-  }
-</style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<div class="widget" id="widget">
-  <span class="edit-btn" id="editBtn">✏️</span>
-  <h2 id="displayName">Your Countdown</h2>
-  <p id="displayCountdown">0d 0h 0m 0s</p>
+<!-- 🌸 BUILDER UI -->
+<div class="builder-ui">
 
-  <div class="themes" id="themes">
-    <div class="theme-circle" style="background: #ffe4e1;" data-theme="#ffe4e1"></div>
-    <div class="theme-circle" style="background: #d8bfd8;" data-theme="#d8bfd8"></div>
-    <div class="theme-circle" style="background: #fdf6e3;" data-theme="#fdf6e3"></div>
-    <div class="theme-circle" style="background: #cfe0e8;" data-theme="#cfe0e8"></div>
+  <div class="widget-header">
+    DigitalGuru's Notion Countdown Widget
   </div>
 
-  <div class="edit-form" id="editForm">
-    <input type="text" id="editName" placeholder="Countdown Name">
-    <input type="date" id="editDate">
-    <button id="saveBtn">Save</button>
+  <!-- TIP BOX -->
+  <div id="usageTip" class="usage-tip">
+    create your own countdown ✧  
+    - set your dates + label + icon  
+    - customize theme + font  
+    - copy your embed link  
+    - paste into notion  
+    enjoy your countdown ✶
   </div>
+
+  <!-- CONTROLS -->
+  <div class="top-left-controls">
+
+    <!-- EDIT COUNTDOWN -->
+    <div id="editBtn" class="btn edit-btn" title="edit countdown">✏️</div>
+
+    <!-- THEME -->
+    <div id="themeBtn" class="btn theme-btn" title="select theme"></div>
+
+    <!-- FONT -->
+    <div id="fontToggle" class="btn font-toggle-btn" title="font">Aa</div>
+
+  </div>
+
+  <!-- ✏️ EDIT POPUP (ALL-IN-ONE) -->
+  <div id="editOptions" class="sign-popup hidden">
+
+    <div class="sign-title">set your countdown</div>
+
+    <!-- DATES -->
+    <div class="input-group">
+      <label>from</label>
+      <input type="date" id="fromDate" />
+    </div>
+
+    <div class="input-group">
+      <label>to</label>
+      <input type="date" id="toDate" />
+    </div>
+
+    <!-- LABEL -->
+    <div class="input-group">
+      <label>label</label>
+      <input type="text" id="countdownLabel" placeholder="e.g. christmas trip ✈️" />
+    </div>
+
+    <!-- ICON SELECT -->
+    <div class="icon-section">
+      <div class="icon-title">select icon</div>
+
+      <div class="icon-grid">
+        <div class="icon-option" data-icon="🎉">🎉</div>
+        <div class="icon-option" data-icon="🎄">🎄</div>
+        <div class="icon-option" data-icon="✈️">✈️</div>
+        <div class="icon-option" data-icon="💖">💖</div>
+        <div class="icon-option" data-icon="🎓">🎓</div>
+        <div class="icon-option" data-icon="🏖️">🏖️</div>
+        <div class="icon-option" data-icon="🎂">🎂</div>
+        <div class="icon-option" data-icon="⭐">⭐</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THEME POPUP -->
+  <div id="themeOptions" class="sign-popup hidden">
+    <div class="sign-title">select theme</div>
+
+    <div class="themes-row">
+      <div class="theme-circle pink" data-theme="pink"></div>
+      <div class="theme-circle beige" data-theme="beige"></div>
+      <div class="theme-circle blue" data-theme="blue"></div>
+      <div class="theme-circle green" data-theme="green"></div>
+    </div>
+  </div>
+
+  <!-- FONT POPUP -->
+  <div id="fontOptions" class="sign-popup hidden">
+    <div class="sign-title">select font</div>
+
+    <div class="font-list">
+      <div class="font-option" data-font="default">default</div>
+      <div class="font-option" data-font="serif">serif</div>
+      <div class="font-option" data-font="mono">mono</div>
+    </div>
+  </div>
+
+  <!-- COPY AREA -->
+  <div class="setup-area">
+    <button id="copyLinkBtn" class="copy-btn">
+      copy my embed Notion link .ᐟ.ᐟ
+    </button>
+
+    <p id="copyMessage" class="copy-message hidden">
+      copied! paste into notion .ᐟ.ᐟ
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-links">
+    <a href="#" class="footer-link">shop templates</a>
+    <span class="divider">•</span>
+    <a href="#" class="footer-link">tiktok</a>
+  </div>
+
 </div>
 
-<script>
-const displayName = document.getElementById('displayName');
-const displayCountdown = document.getElementById('displayCountdown');
-const widget = document.getElementById('widget');
-const themeCircles = document.querySelectorAll('.theme-circle');
-const editBtn = document.getElementById('editBtn');
-const editForm = document.getElementById('editForm');
-const editName = document.getElementById('editName');
-const editDate = document.getElementById('editDate');
-const saveBtn = document.getElementById('saveBtn');
+<!-- 🌿 WIDGET OUTPUT -->
+<div id="widget" class="widget">
 
-// Darken color for text
-function darkenColor(hex, amount = 0.3) {
-  hex = hex.replace("#","");
-  let r = parseInt(hex.substring(0,2),16);
-  let g = parseInt(hex.substring(2,4),16);
-  let b = parseInt(hex.substring(4,6),16);
-  r = Math.floor(r * (1 - amount));
-  g = Math.floor(g * (1 - amount));
-  b = Math.floor(b * (1 - amount));
-  r = r.toString(16).padStart(2,'0');
-  g = g.toString(16).padStart(2,'0');
-  b = b.toString(16).padStart(2,'0');
-  return `#${r}${g}${b}`;
-}
+  <div class="widget-content">
 
-// Load saved data or default
-let countdownName = localStorage.getItem('countdownName') || "Your Countdown";
-let countdownDate = localStorage.getItem('countdownDate') || new Date().toISOString().slice(0,10);
-let countdownTheme = localStorage.getItem('countdownTheme') || "#ffe4e1";
+    <!-- ICON -->
+    <div id="countdownIcon" class="countdown-icon">🎉</div>
 
-// Apply saved theme and values
-widget.style.background = countdownTheme;
-displayName.style.color = darkenColor(countdownTheme, 0.3);
-displayName.textContent = countdownName;
+    <!-- LABEL -->
+    <div id="countdownTitle" class="widget-title">
+      your countdown
+    </div>
 
-// Update countdown every second
-function updateCountdown() {
-  const date = new Date(countdownDate);
-  displayName.textContent = countdownName;
-  if(date) {
-    const now = new Date();
-    const diff = date - now;
-    if(diff > 0) {
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff / (1000*60*60)) % 24);
-      const minutes = Math.floor((diff / (1000*60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      displayCountdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    } else {
-      displayCountdown.textContent = "🎉 Time's up! 🎉";
-    }
-  }
-}
+    <div class="divider-line"></div>
 
-// Theme selection
-themeCircles.forEach(circle => {
-  circle.addEventListener('click', () => {
-    const color = circle.dataset.theme;
-    widget.style.background = color;
-    displayName.style.color = darkenColor(color, 0.3);
-    countdownTheme = color;
-    localStorage.setItem('countdownTheme', color);
-  });
-});
+    <!-- MAIN COUNTDOWN -->
+    <div id="countdownText">set your dates ✧</div>
 
-// Show/hide edit form
-editBtn.addEventListener('click', () => {
-  editForm.style.display = editForm.style.display === "flex" ? "none" : "flex";
-  editName.value = countdownName;
-  editDate.value = countdownDate;
-});
+    <!-- DATE RANGE -->
+    <div id="dateRange"></div>
 
-// Save new values
-saveBtn.addEventListener('click', () => {
-  countdownName = editName.value || countdownName;
-  countdownDate = editDate.value || countdownDate;
-  localStorage.setItem('countdownName', countdownName);
-  localStorage.setItem('countdownDate', countdownDate);
-  updateCountdown();
-  editForm.style.display = "none";
-});
+  </div>
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
+</div>
+
+<script src="countdown.js"></script>
 
 </body>
 </html>
