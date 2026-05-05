@@ -231,8 +231,8 @@ body {
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 .icon-option img {
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
 
   pointer-events: none;
 }
@@ -242,8 +242,8 @@ body {
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 .countdown-icon {
-  width: 22px;
-  height: 22px;
+  width: 34px;
+  height: 34px;
 
   margin-bottom: 6px;
 
