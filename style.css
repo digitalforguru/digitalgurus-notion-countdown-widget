@@ -1,15 +1,11 @@
 /* ---------------- BASE ---------------- */
 body {
-  margin: 0;
-  padding: 10px;
+  margin: 0; padding: 10px;
   background: transparent;
-
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
+  font-family: 'Satoshi', sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
   height: 100vh;
 }
 
@@ -41,6 +37,8 @@ body {
 
   color: #444;
   text-align: center;
+
+  margin-bottom: 8px;
 }
 
 /* ---------------- TIP ---------------- */
@@ -102,7 +100,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #f9d5d3;
+  background: #f4dfeb;
   border: 2px solid white;
 }
 
@@ -266,10 +264,10 @@ body {
   cursor: pointer;
 }
 
-.theme-circle.pink { background: #f9d5d3; }
-.theme-circle.beige { background: #f5f5dc; }
-.theme-circle.blue { background: #cfe7f3; }
-.theme-circle.green { background: #cce0d0; }
+.theme-circle.pink { background: #f4dfeb; }
+.theme-circle.beige { background: #faebdd; }
+.theme-circle.blue { background: #ddebf1; }
+.theme-circle.green { background: #ddedea; }
 
 /* ---------------- FONT OPTIONS ---------------- */
 .font-list {
@@ -310,10 +308,11 @@ body {
 }
 
 /* THEMES */
-.widget.pink { background: #f9d5d3; color: #b56576; }
-.widget.beige { background: #f5f5dc; color: #8b7355; }
-.widget.blue { background: #cfe7f3; color: #4a6fa5; }
-.widget.green { background: #cce0d0; color: #6b8f71; }
+.widget.pink { background-color: #f4dfeb; color: #60355c; }
+.widget.beige { background-color: #faebdd; color: #5d4c3a; }
+.widget.blue { background-color: #ddebf1; color: #4b5c74; }
+.widget.green { background-color: #ddedea; color: #5b6c5a; }
+
 
 /* ---------------- CONTENT ---------------- */
 .widget-content {
