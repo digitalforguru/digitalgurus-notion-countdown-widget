@@ -242,13 +242,13 @@ body {
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 .countdown-icon {
-  width: 20px;
-  height: 20px;
+  width: 36px;
+  height: 36px;
 }
 
 /* OVERRIDE FOR WIDE ICON */
 .countdown-icon.icon-wide {
-  width: 56px;
+  width: 64px;
   height: auto;
 }
 
