@@ -30,15 +30,12 @@ let state = {
   from: params.get("from") || "",
   to: params.get("to") || "",
   label: params.get("label") || "your countdown",
-  icon: params.get("icon") || "🎉",
+  icon: params.get("icon") || "1",
   theme: params.get("theme") || "beige",
   font: params.get("font") || "default"
 };
 
 
-if (params.get("icon")) {
-  state.icon = params.get("icon");
-}
 
 /* hide builder in embed */
 if (isEmbed) {
@@ -85,7 +82,7 @@ function updateCountdown() {
 
 /* ---------------- APPLY UI ---------------- */
 function updateUI() {
-  iconDisplay.src = `assets/icons/${state.icon}.svg`;
+  iconDisplay.src = `/assets/icons/${state.icon}.svg`;
   titleDisplay.textContent = state.label.toLowerCase();
 
   updateCountdown();
@@ -93,7 +90,7 @@ function updateUI() {
 
 function setIcon(icon) {
   state.icon = icon;
-  iconDisplay.src = `assets/icons/${icon}.svg`;
+  iconDisplay.src = "/assets/icons/" + state.icon + ".svg";
 }
 /* ---------------- THEME ---------------- */
 function setTheme(theme) {
