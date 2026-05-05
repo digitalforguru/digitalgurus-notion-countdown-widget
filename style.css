@@ -206,10 +206,10 @@ body {
 
 .icon-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* instead of 4 */
   gap: 8px;
-
-  margin-top: 8px;
+  max-height: 140px;
+  overflow-y: auto;
 }
 
 .icon-option {
@@ -407,4 +407,16 @@ body {
 
 .widget.font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.sign-subtext {
+  letter-spacing: 0.3px;
+  font-size: 10px;
+  opacity: 0.6;
+
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 10px;
+
+  line-height: 1.4;
 }
