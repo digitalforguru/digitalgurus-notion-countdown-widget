@@ -241,6 +241,10 @@ body {
 
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
+.icon-wide {
+  width: 32px;
+  height: auto;
+}
 .countdown-icon {
   width: 34px;
   height: 34px;
