@@ -241,19 +241,15 @@ body {
 
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
-.icon-wide {
-  width: 63px;
-  height: auto;
-}
 .countdown-icon {
-  width: 34px;
-  height: 34px;
+  width: 20px;
+  height: 20px;
+}
 
-  margin-bottom: 6px;
-
-  opacity: 0.9;
-
-  transition: transform 0.2s ease;
+/* OVERRIDE FOR WIDE ICON */
+.countdown-icon.icon-wide {
+  width: 56px;
+  height: auto;
 }
 
 /* ---------------- THEME CIRCLES ---------------- */
