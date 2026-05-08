@@ -126,7 +126,7 @@ iconTabs.forEach(tab => {
 function setTheme(theme) {
   state.theme = theme;
 
-  widget.classList.remove("beige", "pink", "blue", "green");
+  widget.classList.remove("beige", "pink", "blue", "green", "black", "white");
   widget.classList.add(theme);
 }
 
