@@ -273,6 +273,8 @@ body {
 .theme-circle.beige { background: #faebdd; }
 .theme-circle.blue { background: #ddebf1; }
 .theme-circle.green { background: #ddedea; }
+.theme-circle.black { background: #17171a; }
+.theme-circle.white { background: #f8f6f3; border: 1px solid rgba(0,0,0,0.08); }
 
 /* ---------------- FONT OPTIONS ---------------- */
 .font-list {
@@ -317,6 +319,8 @@ body {
 .widget.beige { background-color: #faebdd; color: #5d4c3a; }
 .widget.blue { background-color: #ddebf1; color: #4b5c74; }
 .widget.green { background-color: #ddedea; color: #5b6c5a; }
+.widget.black { background-color: #17171a; color: #f5f3f1; }
+.widget.white { background-color: #f8f6f3; color: #252225; }
 
 
 /* ---------------- CONTENT ---------------- */
