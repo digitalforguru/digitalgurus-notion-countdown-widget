@@ -792,12 +792,12 @@ body.appearance-dark .preview-frame {
 
 html.embed-mode,
 html.embed-mode body {
-  width: var(--embed-width, 145px) !important;
-  height: var(--embed-height, 145px) !important;
-  min-width: var(--embed-width, 145px) !important;
-  min-height: var(--embed-height, 145px) !important;
-  max-width: var(--embed-width, 145px) !important;
-  max-height: var(--embed-height, 145px) !important;
+  width: 220px !important;
+  height: 140px !important;
+  min-width: 220px !important;
+  min-height: 140px !important;
+  max-width: 220px !important;
+  max-height: 140px !important;
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
@@ -824,6 +824,8 @@ html.embed-mode .builder-page {
 
 html.embed-mode .embed-widget {
   display: flex !important;
+  width: 220px !important;
+  height: 140px !important;
   border-radius: 22px !important;
   overflow: hidden !important;
   margin: 0 !important;
