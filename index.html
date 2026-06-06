@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DigitalGuru's Countdown Widget</title>
+  <title>DigitalGuru's Affirmations Widget</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -13,14 +13,14 @@
 
       <header class="builder-nav">
         <a href="https://digitalforguru.github.io/digitalguru-notion-widget-claim-hub/" class="back-link">← back to studio</a>
-        <span class="status-pill">countdown</span>
+        <span class="status-pill">affirmations</span>
       </header>
 
       <section class="hero-card">
         <p class="eyebrow">digitalguru widget setup</p>
-        <h1>Countdown Widget</h1>
+        <h1>Affirmations Widget</h1>
         <p class="hero-subtitle">
-          create a cute countdown for trips, birthdays, launches, holidays, or literally anything you’re waiting on.
+          add a soft daily affirmation to your Notion dashboard with matching themes, fonts, and background modes.
         </p>
       </section>
 
@@ -29,7 +29,7 @@
           <p class="section-label">quick start</p>
           <h2>How to use it?</h2>
           <ol>
-            <li>Set your start date, end date, label, icon, theme, and font.</li>
+            <li>Choose your size, theme, background, and font.</li>
             <li>Copy your embed link.</li>
             <li>Paste it into Notion using <strong>/embed</strong>.</li>
           </ol>
@@ -38,24 +38,22 @@
         <div class="info-card">
           <p class="section-label">dashboard tip</p>
           <h2>Best placement</h2>
-          <p>This widget looks cutest near a goal tracker, trip planner, launch board, or birthday dashboard.</p>
+          <p>This widget looks cutest near a morning dashboard, journal page, wellness section, or habit tracker.</p>
         </div>
       </section>
 
       <section class="preview-card">
         <div class="section-heading">
           <p class="section-label">live preview</p>
-          <h2>See your countdown before copying</h2>
+          <h2>See your affirmation before copying</h2>
         </div>
 
         <div class="preview-frame">
-          <div id="previewWidget" class="widget pink small-square">
+          <div id="previewWidget" class="widget pink medium">
             <div class="widget-content">
-              <img id="previewCountdownIcon" class="countdown-icon" src="assets/icons/1.svg" />
-              <div id="previewCountdownTitle" class="widget-title">your countdown here</div>
               <div class="divider-line"></div>
-              <div id="previewCountdownText">set your dates ✧</div>
-              <div id="previewDateRange"></div>
+              <div id="previewAffirmationText">loading affirmation…</div>
+              <div id="previewDate"></div>
             </div>
           </div>
         </div>
@@ -69,73 +67,16 @@
 
         <div class="control-panel">
           <div class="top-left-controls">
-            <div id="editBtn" class="btn edit-btn" title="edit countdown">⚙</div>
+            <div id="sizeBtn" class="btn size-btn" title="edit widget size">⛶</div>
             <div id="themeBtn" class="btn theme-btn" title="select theme"></div>
             <div id="appearanceToggle" class="btn appearance-toggle-btn" title="background">bg</div>
             <div id="fontToggle" class="btn font-toggle-btn" title="font">Aa</div>
           </div>
 
-          <div id="editOptions" class="theme-options edit-options hidden">
-            <div class="edit-panel">
-              <p class="popup-title">set up your countdown</p>
-              <p class="popup-subtext">create a future countdown or choose today to start counting now</p>
-
-              <div class="input-group">
-                <label>from</label>
-                <input type="date" id="fromDate" />
-              </div>
-
-              <div class="input-group">
-                <label>to</label>
-                <input type="date" id="toDate" />
-              </div>
-
-              <div class="input-group">
-                <label>label</label>
-                <input type="text" id="countdownLabel" placeholder="e.g. christmas trip ✈️" />
-              </div>
-
-              <div class="icon-section">
-                <div class="icon-title">select icon</div>
-
-                <div class="icon-tabs">
-                  <div class="icon-tab active" data-category="all">all</div>
-                  <div class="icon-tab" data-category="travel">travel</div>
-                  <div class="icon-tab" data-category="events">events</div>
-                  <div class="icon-tab" data-category="life">life</div>
-                  <div class="icon-tab" data-category="productivity">focus</div>
-                  <div class="icon-tab" data-category="extras">holiday</div>
-                </div>
-
-                <div class="icon-grid">
-                  <div class="icon-option" data-icon="1" data-category="events"><img src="./assets/icons/1.svg" /></div>
-                  <div class="icon-option" data-icon="2" data-category="events"><img src="./assets/icons/2.svg" /></div>
-                  <div class="icon-option" data-icon="3" data-category="events"><img src="./assets/icons/3.svg" /></div>
-                  <div class="icon-option" data-icon="4" data-category="travel"><img src="./assets/icons/4.svg" /></div>
-                  <div class="icon-option" data-icon="5" data-category="travel"><img src="./assets/icons/5.svg" /></div>
-                  <div class="icon-option" data-icon="6" data-category="travel"><img src="./assets/icons/6.svg" /></div>
-                  <div class="icon-option" data-icon="7" data-category="travel"><img src="./assets/icons/7.svg" /></div>
-                  <div class="icon-option" data-icon="8" data-category="travel"><img src="./assets/icons/8.svg" /></div>
-                  <div class="icon-option" data-icon="9" data-category="productivity"><img src="./assets/icons/9.svg" /></div>
-                  <div class="icon-option" data-icon="10" data-category="events"><img src="./assets/icons/10.svg" /></div>
-                  <div class="icon-option" data-icon="11" data-category="productivity"><img src="./assets/icons/11.svg" /></div>
-                  <div class="icon-option" data-icon="12" data-category="productivity"><img src="./assets/icons/12.svg" /></div>
-                  <div class="icon-option" data-icon="13" data-category="life"><img src="./assets/icons/13.svg" /></div>
-                  <div class="icon-option" data-icon="14" data-category="extras"><img src="./assets/icons/14.svg" /></div>
-                  <div class="icon-option" data-icon="15" data-category="extras"><img src="./assets/icons/15.svg" /></div>
-                  <div class="icon-option" data-icon="16" data-category="events"><img src="./assets/icons/16.svg" /></div>
-                  <div class="icon-option" data-icon="17" data-category="productivity"><img src="./assets/icons/17.svg" /></div>
-                  <div class="icon-option" data-icon="18" data-category="productivity"><img src="./assets/icons/18.svg" /></div>
-                  <div class="icon-option" data-icon="19" data-category="events"><img src="./assets/icons/19.svg" /></div>
-                  <div class="icon-option" data-icon="20" data-category="life"><img src="./assets/icons/20.svg" /></div>
-                  <div class="icon-option" data-icon="21" data-category="productivity"><img src="./assets/icons/21.svg" /></div>
-                  <div class="icon-option" data-icon="22" data-category="life"><img src="./assets/icons/22.svg" /></div>
-                  <div class="icon-option" data-icon="23" data-category="events"><img src="./assets/icons/23.svg" /></div>
-                  <div class="icon-option" data-icon="24" data-category="productivity"><img src="./assets/icons/24.svg" /></div>
-                  <div class="icon-option" data-icon="25" data-category="productivity"><img src="./assets/icons/25.svg" /></div>
-                </div>
-              </div>
-            </div>
+          <div id="sizeOptions" class="theme-options hidden">
+            <div class="size-option" data-size="small">sm. square</div>
+            <div class="size-option" data-size="medium">med. square</div>
+            <div class="size-option" data-size="wide">rectangle</div>
           </div>
 
           <div id="themeOptions" class="theme-options hidden">
@@ -186,23 +127,23 @@
         </details>
 
         <details>
-          <summary>Can I change the countdown later?</summary>
-          <p>Yes! Come back to this builder page, update your dates, label, icon, or style, then copy the new link.</p>
+          <summary>Does the affirmation change?</summary>
+          <p>Yes! The widget displays an affirmation from the built-in affirmation list.</p>
         </details>
 
         <details>
-          <summary>What can I count down to?</summary>
-          <p>Anything with a date: trips, birthdays, holidays, launches, deadlines, school events, or personal goals.</p>
+          <summary>Can I change the style later?</summary>
+          <p>Yes! Come back to this builder page, change your settings, and copy a fresh embed link.</p>
         </details>
       </section>
 
       <section class="updates-card">
         <p class="section-label">recent updates</p>
-        <h2>Countdown Widget v1.0</h2>
+        <h2>Affirmations Widget v1.0</h2>
         <ul>
-          <li>Added custom start and end dates.</li>
-          <li>Added icon categories and custom labels.</li>
+          <li>Added size options for square and rectangle layouts.</li>
           <li>Added matching Notion-style themes and fonts.</li>
+          <li>Added light, dark, and system background options.</li>
         </ul>
       </section>
 
@@ -217,16 +158,15 @@
     </section>
   </main>
 
-  <div id="widget" class="widget pink small-square embed-widget">
+  <div id="widget" class="widget pink medium embed-widget">
     <div class="widget-content">
-      <img id="countdownIcon" class="countdown-icon" src="assets/icons/1.svg" />
-      <div id="countdownTitle" class="widget-title">your countdown here</div>
       <div class="divider-line"></div>
-      <div id="countdownText">set your dates ✧</div>
-      <div id="dateRange"></div>
+      <div id="affirmationText">loading affirmation…</div>
+      <div id="date"></div>
     </div>
   </div>
 
-  <script src="countdown.js"></script>
+  <script src="affirmations.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>
