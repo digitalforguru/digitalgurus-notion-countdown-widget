@@ -249,9 +249,10 @@ body::before {
 
 .control-panel {
   position: relative;
-  min-height: 240px;
-  display: grid;
-  place-items: center;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 14px;
 }
 
@@ -327,10 +328,13 @@ body::before {
 }
 
 .edit-options {
+  position: static;
+  transform: none;
   width: min(520px, 94vw);
-  max-height: 440px;
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
   align-items: stretch;
+  margin-top: 16px;
 }
 
 .edit-options::before {
